@@ -28,24 +28,18 @@
     </script>
 
     <script type="text/javascript">
-        $("#navbar ul li a[href^='#']").on('click', function (e) {
+        $(".navbar li a[href^='#']").on('click', function (event) {
+            var target = this.hash;
 
-            // prevent default anchor click behavior
-            e.preventDefault();
+            event.preventDefault();
 
-            // store hash
-            var hash = this.hash;
+            var navOffset = $('#navbar').height();
 
-            // animate
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
+            return $('html, body').animate({
+                scrollTop: $(this.hash).offset().top - navOffset
             }, 300, function () {
-
-                // when done, add hash to url
-                // (default click behaviour)
-                window.location.hash = hash;
+                return window.history.pushState(null, null, target);
             });
-
         });
     </script>
     <title>Document</title>
@@ -75,8 +69,8 @@
 
     <div id="header_section" class="header_section ">
         <div class="title">
-            <h1>I'm Captain Tsubasa</h1>
-            <p>A PROFESSIONAL FOOTBALL PLAYER</p>
+            <h1>YOGI WISESA</h1>
+            <p>SOFTWARE ENGINEER WANNABE // A SLEEP LOVER</p>
         </div>
     </div>
 
