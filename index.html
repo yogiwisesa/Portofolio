@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"> </script>
+    <script type="text/javascript" src="js/bootstrap.js"> </script>
+    <script type="text/javascript">
+        (function ($) {
+            $(document).ready(function () {
+                $(function () {
+                    $(window).scroll(function () {
+
+                        // set distance user needs to scroll before we start fadeIn
+                        if ($(this).scrollTop() > 100) {
+                            $('.navbar').css("background", "black");
+                        } else {
+                            $('.navbar').css("background", "rgba(0,0,0,0)");
+                        }
+                    });
+                });
+
+            });
+        }(jQuery));
+    </script>
+
+    <script type="text/javascript">
+        $("#navbar ul li a[href^='#']").on('click', function (e) {
+
+            // prevent default anchor click behavior
+            e.preventDefault();
+
+            // store hash
+            var hash = this.hash;
+
+            // animate
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 300, function () {
+
+                // when done, add hash to url
+                // (default click behaviour)
+                window.location.hash = hash;
+            });
+
+        });
+    </script>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+
+<body>
+    <nav id="navbar" class="navbar justify-content-center fixed-top navbar-expand">
+        <ul class="navbar-nav">
+            <li class="nav-item .active">
+                <a href="#header_section" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item.active">
+                <a href="#portofolio" class="nav-link">Design</a>
+            </li>
+            <li class="nav-item .active">
+                <a href="#about" class="nav-link">About</a>
+            </li>
+            <li class="nav-item .active">
+                <a href="#contact" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <div id="header_section" class="header_section ">
+        <div class="title">
+            <h1>I'm Captain Tsubasa</h1>
+            <p>A PROFESSIONAL FOOTBALL PLAYER</p>
+        </div>
+    </div>
+
+    <div id="portofolio" class="portofolio">
+        <div class="text-portofolio">
+            <h2>PORTOFOLIO</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 x col-6">
+                    <img src="img/tsubasa.png" alt "Tsubasa" class="img-thumbnail">
+                </div>
+                <div class="col-md-4 z col-6">
+                    <img src="img/tsubasa-6.jpg" alt "Tsubasa" class="img-thumbnail">
+                </div>
+                <div class="col-md-4 w col-6">
+                    <img src="img/tsubasa.png" alt "Tsubasa" class="img-thumbnail">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="about" class="about"></div>
+</body>
+
+</html>
