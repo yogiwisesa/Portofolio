@@ -7,7 +7,7 @@
 .portofolio{
     padding-top:120px;
     padding-bottom: 25px;
-    background: blue;
+    background: #FFFFFF;
     overflow: auto;
 }
 
@@ -17,7 +17,7 @@
 
 .about {
     height: 50vh;
-    background: green;
+    background: #F5F5F5;
 }
 
 .header_section .title{
@@ -31,21 +31,7 @@
 
 .portofolio .text-portofolio{
     text-align: center;
-    color: white;
-}
-
-.x{
-    background: brown
-}
-
-
-.z{
-    background: yellow
-}
-
-
-.w{
-    background: blueviolet
+    color: black;
 }
 
 .navbar ul li a{
@@ -57,6 +43,18 @@
     transition-duration: 0.5s;
 }
 
+.footer {
+    background: #1D1D1D;
+    overflow: auto;
+    padding: 20px;
+
+}
+
+.footer p {
+    color: white;
+    margin: auto;
+    text-align: center
+}
 @media (max-width: 576px) { 
     .header_section h1{
         font-size:25px;
@@ -71,6 +69,10 @@
 
     .portofolio {
         padding-top: 25px;
+    }
+
+    .footer p {
+        font-size: 12px
     }
     
 }
